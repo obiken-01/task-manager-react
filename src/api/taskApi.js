@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api/tasks";
+const API_URL = import.meta.env.VITE_API_URL || "https://task-manager-express-kappa.vercel.app/api/tasks";
 
 async function request(url, options = {}) {
   const response = await fetch(url, {
