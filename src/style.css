@@ -1,0 +1,90 @@
+:root {
+  --text: #ededed;
+  --muted: #a1a1a1;
+  --bg: #000000;
+  --card: #0a0a0a;
+  --border: #262626;
+  --accent: #ededed;
+  --danger: #ff6166;
+  color-scheme: dark;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+body { margin: 0; }
+
+.app {
+  max-width: 640px;
+  margin: 40px auto;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+h1 { margin: 0; font-size: 28px; }
+.subtitle { margin: 4px 0 24px; color: var(--muted); }
+
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+}
+
+button {
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.task-form { display: grid; gap: 8px; margin-bottom: 20px; }
+.task-form-row { display: flex; gap: 8px; }
+.task-form button[type="submit"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+  white-space: nowrap;
+}
+
+.task-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.filter-buttons { display: flex; gap: 6px; }
+.filter-buttons button.active { background: var(--text); color: var(--card); }
+.remaining { color: var(--muted); font-size: 14px; }
+
+.task-list { list-style: none; padding: 0; margin: 0; }
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.task-item input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; }
+.task-text { flex: 1; display: flex; flex-direction: column; }
+.task-description { color: var(--muted); font-size: 13px; }
+.task-item.completed .task-title { text-decoration: line-through; color: var(--muted); }
+.delete-button { color: var(--danger); }
+
+.empty-message, .status { text-align: center; color: var(--muted); padding: 32px 0; }
+.error { color: var(--danger); }
+
+@media (max-width: 480px) {
+  .app { margin: 0; border-radius: 0; border: none; }
+}
